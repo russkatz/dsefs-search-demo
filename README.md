@@ -21,8 +21,7 @@
    * This uses simple replication with RF=1. You may need to adjust this.
    * `cqlsh -f create_schema.cql`
 * Configure DSE Search index
-   * cqlsh: `CREATE SEARCH INDEX ON dsefs_demo.docx` -OR-
-   * `dsetool create_core dsefs_demo.docx generateResources=true reindex=true`
+   * cqlsh: `CREATE SEARCH INDEX ON dsefs_demo.docx WITH OPTIONS { reindex : true };`
 * Configure Flask
    * `export FLASK_APP=docxapi.py`
    
@@ -34,10 +33,10 @@
 * Verify metadata in DSE
    * cqlsh: `SELECT * FROM dsefs_demo.docx`
 * Verify Search is indexing
-   * cqlsh: `SELECT dsefspath WHERE solr_query = '
-   * Copy the dsefspath to your clipboard
+   * cqlsh: `SELECT docid,dsefspath WHERE solr_query = 'linetext:"DataStax cluster"';
+   * You will need the dsefspath and docid later
 * Verify file is in DSEFS
    * Start dsefs command prompt: `dse fs`
-   * `ls <paste dsefspath from above`
+   * `ls <dsefspath from above>`
 * Download file through the API
    * COMING SOON
