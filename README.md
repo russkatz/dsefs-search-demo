@@ -3,6 +3,6 @@
 
 #### Prereqs
 * DSE 5.1+
-** Search enabled
-** DSEFS enabled
+  * Search enabled
+  * DSEFS enabled
 
