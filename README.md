@@ -8,4 +8,6 @@
 * Datastax Python Driver
    * `pip install dse-driver`
 * Other Python drivers
-   * Flask (REST API) `pip install flask`
+   * Flask: `pip install flask`
+   * pyWebHDFS: `pip install pywebhdfs`
+   * docx2txt: `pip install docx2txt`
