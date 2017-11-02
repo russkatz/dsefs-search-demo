@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-from flask import Flask, jsonify, abort, request, make_response, url_for, redirect, send_file, Response
+from flask import Flask, jsonify, abort, request, make_response, url_for, redirect, send_file
 import docx2txt
 import uuid
 import os
@@ -9,7 +9,6 @@ from pywebhdfs.webhdfs import PyWebHdfsClient
 from dse.cluster import Cluster
 
 #Configuration
-tmpdir = '/tmp'
 contactpoints = ['127.0.0.1','127.0.0.1']
 dsefshost='127.0.0.1'
 
@@ -35,12 +34,9 @@ def download_file(docid):
 @app.route('/docx', methods=['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
-        # check if the post request has the file part
         if 'file' not in request.files:
             return 'No file part'
         file = request.files['file']
-        # if user does not select file, browser also
-        # submit a empty part without filename
         if file.filename == '':
             return 'No selected file'
         if file:
@@ -57,13 +53,4 @@ def upload_file():
                session.execute(query)
             
             return str(docid) + ' Success!'
-    return '''
-    <!doctype html>
-    <title>Upload new File</title>
-    <h1>Upload new File</h1>
-    <form method=post enctype=multipart/form-data>
-      <p><input type=file name=file>
-         <input type=submit value=Upload>
-    </form>
-    '''
-
+    return 403
