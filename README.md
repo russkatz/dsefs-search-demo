@@ -5,4 +5,7 @@
 * DSE 5.1+
   * Search enabled
   * DSEFS enabled
-
+* Datastax Python Driver
+   * `pip install dse-driver`
+* Other Python drivers
+   * Flask (REST API) `pip install flask`
