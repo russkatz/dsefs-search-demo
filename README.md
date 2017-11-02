@@ -21,8 +21,7 @@
    * This uses simple replication with RF=1. You may need to adjust this.
    * `cqlsh -f create_schema.cql`
 * Configure DSE Search index
-   * cqlsh: `CREATE SEARCH INDEX ON dsefs_demo.docx`
-   - OR -
+   * cqlsh: `CREATE SEARCH INDEX ON dsefs_demo.docx` -OR-
    * `dsetool create_core dsefs_demo.docx generateResources=true reindex=true`
 * Configure Flask
    * `export FLASK_APP=docxapi.py`
