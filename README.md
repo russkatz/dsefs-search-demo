@@ -40,4 +40,4 @@
    * `ls <dsefspath from above>`
 * Download file through the API
    * Use your browser to test the API
-   * http://127.0.0.1:5000/docx/<docid from above>
+   * `http://127.0.0.1:5000/docx/<docid from above>`
