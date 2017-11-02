@@ -33,7 +33,7 @@
 * Verify metadata in DSE
    * cqlsh: `SELECT * FROM dsefs_demo.docx`
 * Verify Search is indexing
-   * cqlsh: `SELECT docid,dsefspath WHERE solr_query = 'linetext:"DataStax cluster"'`;
+   * cqlsh: `SELECT docid,dsefspath WHERE solr_query = 'linetext:"DataStax cluster"';`
    * You will need the dsefspath and docid later
 * Verify file is in DSEFS
    * Start dsefs command prompt: `dse fs`
