@@ -33,10 +33,12 @@
 * Verify metadata in DSE
    * cqlsh: `SELECT * FROM dsefs_demo.docx`
 * Verify Search is indexing
-   * cqlsh: `SELECT docid,dsefspath WHERE solr_query = 'linetext:"DataStax cluster"';
+   * cqlsh: `SELECT docid,dsefspath WHERE solr_query = 'linetext:"DataStax cluster"';`
    * You will need the dsefspath and docid later
 * Verify file is in DSEFS
    * Start dsefs command prompt: `dse fs`
    * `ls <dsefspath from above>`
 * Download file through the API
-   * COMING SOON
+   * Use your browser to test the API
+   * `http://127.0.0.1:5000/docx/<docid from above>`
+   * Example: `http://127.0.0.1:5000/docx/88dcf35e-4261-4c0f-936a-c5d9d44bc035`

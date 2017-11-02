@@ -6,5 +6,5 @@ CREATE TABLE dsefs_demo.docx (
     dsefspath text,
     filename text,
     linetext text,
-    PRIMARY KEY ((docid, lineid))
+    PRIMARY KEY (docid, lineid)
 );
