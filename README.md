@@ -39,6 +39,5 @@
    * Start dsefs command prompt: `dse fs`
    * `ls <dsefspath from above>`
 * Download file through the API
-   * Use your browser to test the API
-   * `http://127.0.0.1:5000/docx/<docid from above>`
-   * Example: `http://127.0.0.1:5000/docx/88dcf35e-4261-4c0f-936a-c5d9d44bc035`
+   * `curl -JLO http://127.0.0.1:5000/docx/<docid from above>`
+   * Example: `curl -JLO http://127.0.0.1:5000/docx/88dcf35e-4261-4c0f-936a-c5d9d44bc035`
