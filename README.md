@@ -11,3 +11,30 @@
    * Flask: `pip install flask`
    * pyWebHDFS: `pip install pywebhdfs`
    * docx2txt: `pip install docx2txt`
+* Curl
+* git
+
+#### Setup
+* Download Repository
+   * `git clone https://github.com/russkatz/dsefs-search-demo && cd dsefs-search-demo`
+* Create data model
+   * This uses simple replication with RF=1. You may need to adjust this.
+   * `cqlsh -f create_schema.cql`
+* Configure Flask
+   * `export FLASK_APP=docxapi.py`
+   
+#### Running
+* Start API server
+   * `flask run --host=0.0.0.0 &`
+* Submit docx file
+   * `curl -F 'file=@test1.docx' http://127.0.0.1:5000/docx`
+* Verify metadata in DSE
+   * cqlsh: `SELECT * FROM dsefs_demo.docx`
+* Verify Search is indexing
+   * cqlsh: `SELECT dsefspath WHERE solr_query = '
+   * Copy the dsefspath to your clipboard
+* Verify file is in DSEFS
+   * Start dsefs command prompt: `dse fs`
+   * `ls <paste dsefspath from above`
+* Download file through the API
+   * COMING SOON
