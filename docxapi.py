@@ -1,9 +1,10 @@
 #!/usr/bin/python
 
-from flask import Flask, jsonify, abort, request, make_response, url_for, redirect, send_file
+from flask import Flask, jsonify, abort, request, make_response, url_for, redirect, send_file, Response
 import docx2txt
 import uuid
 import os
+import io
 from pywebhdfs.webhdfs import PyWebHdfsClient
 from dse.cluster import Cluster
 
@@ -29,10 +30,7 @@ def download_file(docid):
     dsefspath = str(results[0][0])
     filename = str(results[0][1])
     dsefsfile = dsefs.read_file(dsefspath)
-    with open(tmpdir + '/' + docid, 'w') as f:
-       f.write(dsefsfile)
-       
-    return send_file(tmpdir + '/' + docid, attachment_filename=filename, as_attachment=True, mimetype='application/octet-stream')
+    return send_file(io.BytesIO(dsefsfile), attachment_filename=filename, as_attachment=True, mimetype='application/octet-stream')
 
 @app.route('/docx', methods=['GET', 'POST'])
 def upload_file():
