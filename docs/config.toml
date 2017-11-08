@@ -1,0 +1,42 @@
+languageCode = "en-us"
+title = "DSEFS + Search Demo"
+theme = "hugo-material-docs"
+metadataformat = "yaml"
+canonifyurls = true
+
+[params]
+	description = "DSEFS + Search Demo"
+
+	logo = "images/asset-hub.svg"
+	favicon = "/images/asset-hub.png"
+
+[params.palette]
+    primary = "grey"
+    accent  = "teal"
+
+[params.font]
+    text = "Roboto"
+    code = "Roboto Mono"
+
+[social]
+	github  = "russkatz/dsefs-search-demo"
+
+[blackfriday]
+	smartypants	= true
+	fractions = true
+	smartDashes = true
+	plainIDAnchors = true
+
+
+[[menu.main]]
+	name   = "Prereqs"
+	url    = "prereqs/"
+	weight = 10
+[[menu.main]]
+    name   = "Setup"
+    url    = "search/"
+    weight = 100
+[[menu.main]]
+    name   = "Running"
+    url    = "running/"
+    weight = 100
